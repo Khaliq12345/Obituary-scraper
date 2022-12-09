@@ -50,7 +50,7 @@ def scrape():
     df = pd.DataFrame(item_list)
     col2.metric('Total data scraped', value=len(df))
     st.dataframe(df)
-    csv = df.to_csv().encode('utf-8')
+    csv = df.to_csv(index=False).encode('utf-8')
 
     st.download_button(
     label="Download data as CSV",
