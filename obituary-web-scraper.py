@@ -70,7 +70,7 @@ with st.form('Scraper'):
         st.caption('This should in lowercases and replace any space with "-" e.g "New York" => "new-york"')
         state = st.text_input('State', placeholder='maryland')
         st.caption('This should in lowercases and replace any space with "-" and separate each city by a comma (,) ')
-        cities = st.text_area('Cities', placeholder= 'pasadena', 'glen-burnie')
+        cities = st.text_area('Cities', placeholder= 'pasadena, glen-burnie')
         cities = cities.split(',')
 
         button = st.form_submit_button('Scrape!')
