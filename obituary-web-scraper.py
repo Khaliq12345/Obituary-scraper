@@ -40,10 +40,25 @@ def scrape():
                     middle_name = x['name']['middleName']
             except:
                     middle_name = None
+            try:
+                    age = x['age']
+            except:
+                    age = None
+            try:
+                    city = x['location']['city']['fullName']
+            except:
+                    city = None
+            try:
+                    the_state = x['location']['state']['fullName']
+            except:
+                    the_state = None
             item = {
                     'First Name': first_name,
                     'Last Name': last_name,
-                    'Middle Name': middle_name
+                    'Middle Name': middle_name,
+                    'Age': age,
+                    'City': city,
+                    'State': the_state
             }
             item_list.append(item)
 
