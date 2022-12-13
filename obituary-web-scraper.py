@@ -56,7 +56,7 @@ def scrape():
                     'First Name': first_name,
                     'Last Name': last_name,
                     'Middle Name': middle_name,
-                    'Age': age,
+                    'Age': str(age),
                     'City': city,
                     'State': the_state
             }
