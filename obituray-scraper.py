@@ -4,7 +4,7 @@ import pandas as pd
 import json
 
 
-API_KEY = '292a7e4ef33729b6b1c085e3ddcd9064'
+API_KEY = input('Paste your ScraperAPI Key here: ')
 today_date = '2022-12-09'
 start_date = '2022-9'
 state = 'maryland'
@@ -35,10 +35,25 @@ def scrape():
                                 middle_name = x['name']['middleName']
                         except:
                                 middle_name = None
+                        try:
+                                age = x['age']
+                        except:
+                                age = None
+                        try:
+                                city = x['location']['city']['fullName']
+                        except:
+                                city = None
+                        try:
+                                the_state = x['location']['state']['fullName']
+                        except:
+                                the_state = None
                         item = {
                                 'First Name': first_name,
                                 'Last Name': last_name,
-                                'Middle Name': middle_name
+                                'Middle Name': middle_name,
+                                'Age': age,
+                                'City': city,
+                                'State': the_state
                         }
                         item_list.append(item)
 
